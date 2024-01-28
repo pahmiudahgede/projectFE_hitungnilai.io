@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Nilai</title>
+</head>
+<body>
+    <h1>Masukkan Nilai Anda</h1>
+    <form>
+        <label for="inputNilai">Nilai:</label>
+        <input type="number" id="inputNilai" name="inputNilai">
+        <button type="button" onclick="tampilkanHasil()">Tampilkan Hasil</button>
+    </form>
+    <p id="nilaiHuruf"></p>
+    <p id="bilangan"></p>
+    <script>
+        function tampilkanHasil() {
+            let nilai = document.getElementById("inputNilai").value;
+            if (nilai == "") {
+                document.getElementById("bilangan").innerHTML = "";
+            } else if (nilai % 2 == 0) {
+                document.getElementById("bilangan").innerHTML = "Bilangan " + nilai + " adalah bilangan genap.";
+            } else {
+                document.getElementById("bilangan").innerHTML = "Bilangan " + nilai + " adalah bilangan ganjil.";
+            }
+            if (nilai >= 85 && nilai <= 100) {
+                document.getElementById("nilaiHuruf").innerHTML = "Nilai Anda: " + nilai + " (Nilai Huruf: A)";
+            } else if (nilai >= 75 && nilai <= 84) {
+                document.getElementById("nilaiHuruf").innerHTML = "Nilai Anda: " + nilai + " (Nilai Huruf: B)";
+            } else if (nilai >= 60 && nilai <= 74) {
+                document.getElementById("nilaiHuruf").innerHTML = "Nilai Anda: " + nilai + " (Nilai Huruf: C)";
+            } else if (nilai != "") {
+                document.getElementById("nilaiHuruf").innerHTML = "Nilai Anda: " + nilai + " (Nilai Huruf: D)";
+            } else {
+                document.getElementById("nilaiHuruf").innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
